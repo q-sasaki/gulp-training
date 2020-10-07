@@ -5,6 +5,7 @@ const rename = require("gulp-rename")
 const htmlmin = require("gulp-htmlmin")
 const uglify = require("gulp-uglify")
 const babel = require("gulp-babel")
+const imagemin = require("gulp-imagemin")
 
 gulp.task("htmlmin", () => {
   gulp.src("src/html/**/*.html")
@@ -31,4 +32,11 @@ gulp.task("compress", () => {
     .pipe(gulp.dest("./dist/js"))
 })
 
-gulp.task("default", ["htmlmin", "sass", "compress"])
+gulp.task("imagemin", () => {
+  gulp.src("src/images/sunfish.png")
+    .pipe(imagemin())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest("./dist/images"))
+})
+
+gulp.task("default", ["htmlmin", "sass", "compress", "imagemin"])
