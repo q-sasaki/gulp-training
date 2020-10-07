@@ -1,0 +1,24 @@
+{
+  "name": "gulp-training",
+  "version": "1.0.0",
+  "description": "gulp練習用リポジトリ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/q-sasaki/gulp-training.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/q-sasaki/gulp-training/issues"
+  },
+  "homepage": "https://github.com/q-sasaki/gulp-training#readme",
+  "dependencies": {
+    "gulp": "3.9.1",
+    "gulp-sass": "4.0.2"
+  }
+}
