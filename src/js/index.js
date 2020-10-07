@@ -1,6 +1,6 @@
 const target = document.getElementById("root")
 
-target.addEventListener("mouseenter", function() {
+target.addEventListener("mouseenter", () => {
   target.style.color = "green";
 })
 
