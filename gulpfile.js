@@ -10,6 +10,7 @@ const del = require("del")
 const runSequence = require("run-sequence")
 
 gulp.task("html", () => {
+  console.log(`\n༼ つ ◕_◕ ༽つ HTML Minify \n`);
   gulp.src("src/html/**/*.html")
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(rename({suffix: ".min"}))
@@ -17,6 +18,7 @@ gulp.task("html", () => {
 })
 
 gulp.task("sass", () => {
+  console.log(`\n(☞ﾟ∀ﾟ)☞ SASS Minify \n`);
   gulp.src("src/sass/**/*.scss")
     .pipe(sass({outputStyle: "expanded"}))
     .pipe(cssmin())
@@ -25,6 +27,7 @@ gulp.task("sass", () => {
 })
 
 gulp.task("js", () => {
+  console.log(`\n(づ￣ ³￣)づ JS Minify \n`);
   gulp.src("src/js/**/*.js")
     .pipe(babel({
       presets: ["@babel/env"]
@@ -35,6 +38,7 @@ gulp.task("js", () => {
 })
 
 gulp.task("images", () => {
+  console.log(`\n༼ง ◉_◉༽ง IMAGES Minify \n`);
   gulp.src("src/images/sunfish.png")
     .pipe(imagemin())
     .pipe(rename({suffix: ".min"}))
@@ -43,6 +47,7 @@ gulp.task("images", () => {
 
 // ワイルドカードがうまくいかないので一旦パスを直書き
 gulp.task("clean", () => {
+  console.log("\nε＝ε＝ε＝(((((ﾉ｀･Д･)ﾉ CLEAN UP\n");
   del(["dist/html/index.min.html", "dist/css/index.min.css", "dist/js/index.min.js", "dist/images/sunfish.min.png"])
 })
 
