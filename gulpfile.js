@@ -1,7 +1,6 @@
 const gulp = require("gulp")
 const sass = require("gulp-sass")
 const cssmin = require("gulp-cssmin")
-const rename = require("gulp-rename")
 const htmlmin = require("gulp-htmlmin")
 const uglify = require("gulp-uglify")
 const babel = require("gulp-babel")
@@ -15,7 +14,7 @@ const notify = require("gulp-notify")
 // htmltask
 gulp.task("html:minify", () => {
   console.log(`\n༼ つ ◕_◕ ༽つ HTML minify \n`)
-  gulp.src("src/html/**/*.html")
+  gulp.src("src/html/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -27,7 +26,7 @@ gulp.task("html:minify", () => {
 
 gulp.task("html:copy", () => {
   console.log(`\n༼ つ ◕_◕ ༽つ HTML watch \n`)
-  gulp.src("src/html/**/*.html")
+  gulp.src("src/html/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -40,7 +39,7 @@ gulp.task("html:copy", () => {
 // sass task
 gulp.task("sass:minify", () => {
   console.log(`\n(☞ﾟ∀ﾟ)☞ SASS minify \n`)
-  gulp.src("src/sass/**/*.scss")
+  gulp.src("src/sass/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -53,7 +52,7 @@ gulp.task("sass:minify", () => {
 
 gulp.task("sass:copy", () => {
   console.log(`\n(☞ﾟ∀ﾟ)☞ SASS watch \n`)
-  gulp.src("src/sass/**/*.scss")
+  gulp.src("src/sass/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -67,7 +66,7 @@ gulp.task("sass:copy", () => {
 // js task
 gulp.task("js:minify", () => {
   console.log(`\n(づ￣ ³￣)づ JS minify \n`)
-  gulp.src("src/js/**/*.js")
+  gulp.src("src/js/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -82,7 +81,7 @@ gulp.task("js:minify", () => {
 
 gulp.task("js:copy", () => {
   console.log(`\n(づ￣ ³￣)づ JS watch \n`)
-  gulp.src("src/js/**/*.js")
+  gulp.src("src/js/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -95,7 +94,7 @@ gulp.task("js:copy", () => {
 // images task
 gulp.task("images:minify", () => {
   console.log(`\n༼ง ◉_◉༽ง IMAGES minify \n`)
-  gulp.src("src/images/sunfish.png")
+  gulp.src("src/images/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -107,7 +106,7 @@ gulp.task("images:minify", () => {
 
 gulp.task("images:copy", () => {
   console.log(`\n༼ง ◉_◉༽ง IMAGES watch \n`)
-  gulp.src("src/images/sunfish.png")
+  gulp.src("src/images/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -119,9 +118,7 @@ gulp.task("images:copy", () => {
 
 gulp.task("clean", () => {
   console.log("\nε＝ε＝ε＝(((((ﾉ｀･Д･)ﾉ CLEAN UP\n")
-  // ワイルドカードがうまくいかないので一旦パスを直書き
-  // del(["dist/**/*"])
-  del(["dist/html/index.html", "dist/css/index.css", "dist/js/index.js", "dist/images/sunfish.png"])
+  del(["dist"])
 })
 
 
@@ -137,16 +134,18 @@ gulp.task("build", ["html:minify", "sass:minify", "js:minify", "images:minify"])
 gulp.task("copy", ["html:copy", "sass:copy", "js:copy", "images:copy"])
 
 
-gulp.task("prod", ["clean", "build"])
-gulp.task("dev", ["clean", "copy", "watch"])
+gulp.task("prod", () => {
+  return runSequence([
+    "clean",
+    "build"
+  ])
+})
 
 
-gulp.task("default", ["clean", "build", "watch"])
-// もしタスクが順番通りに行かない場合はこっちを使う
-// gulp.task("default", () => {
-//   return runSequence(
-//     "clean",
-//     "build",
-//     "watch"
-//   )
-// })
+gulp.task("dev", () => {
+  return runSequence([
+    "clean",
+    "copy",
+    "watch"
+  ])
+})
