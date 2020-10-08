@@ -8,10 +8,17 @@ const babel = require("gulp-babel")
 const imagemin = require("gulp-imagemin")
 const del = require("del")
 const runSequence = require("run-sequence")
+const plumber = require("gulp-plumber")
+const notify = require("gulp-notify")
 
 gulp.task("html", () => {
   console.log(`\n༼ つ ◕_◕ ༽つ HTML Minify \n`);
   gulp.src("src/html/**/*.html")
+    .pipe(plumber({
+      errorHandler: notify.onError(
+        "Error: <%= error.message %>"
+      )
+    }))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest("dist/html"))
@@ -20,6 +27,11 @@ gulp.task("html", () => {
 gulp.task("sass", () => {
   console.log(`\n(☞ﾟ∀ﾟ)☞ SASS Minify \n`);
   gulp.src("src/sass/**/*.scss")
+    .pipe(plumber({
+      errorHandler: notify.onError(
+        "Error: <%= error.message %>"
+      )
+    }))
     .pipe(sass({outputStyle: "expanded"}))
     .pipe(cssmin())
     .pipe(rename({suffix: ".min"}))
@@ -29,6 +41,11 @@ gulp.task("sass", () => {
 gulp.task("js", () => {
   console.log(`\n(づ￣ ³￣)づ JS Minify \n`);
   gulp.src("src/js/**/*.js")
+    .pipe(plumber({
+      errorHandler: notify.onError(
+        "Error: <%= error.message %>"
+      )
+    }))
     .pipe(babel({
       presets: ["@babel/env"]
     }))
@@ -40,6 +57,11 @@ gulp.task("js", () => {
 gulp.task("images", () => {
   console.log(`\n༼ง ◉_◉༽ง IMAGES Minify \n`);
   gulp.src("src/images/sunfish.png")
+    .pipe(plumber({
+      errorHandler: notify.onError(
+        "Error: <%= error.message %>"
+      )
+    }))
     .pipe(imagemin())
     .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest("dist/images"))
