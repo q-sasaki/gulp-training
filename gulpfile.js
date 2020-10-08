@@ -12,7 +12,7 @@ const plumber = require("gulp-plumber")
 const notify = require("gulp-notify")
 
 gulp.task("html", () => {
-  console.log(`\n༼ つ ◕_◕ ༽つ HTML Minify \n`);
+  console.log(`\n༼ つ ◕_◕ ༽つ HTML Minify \n`)
   gulp.src("src/html/**/*.html")
     .pipe(plumber({
       errorHandler: notify.onError(
@@ -25,7 +25,7 @@ gulp.task("html", () => {
 })
 
 gulp.task("sass", () => {
-  console.log(`\n(☞ﾟ∀ﾟ)☞ SASS Minify \n`);
+  console.log(`\n(☞ﾟ∀ﾟ)☞ SASS Minify \n`)
   gulp.src("src/sass/**/*.scss")
     .pipe(plumber({
       errorHandler: notify.onError(
@@ -39,7 +39,7 @@ gulp.task("sass", () => {
 })
 
 gulp.task("js", () => {
-  console.log(`\n(づ￣ ³￣)づ JS Minify \n`);
+  console.log(`\n(づ￣ ³￣)づ JS Minify \n`)
   gulp.src("src/js/**/*.js")
     .pipe(plumber({
       errorHandler: notify.onError(
@@ -55,7 +55,7 @@ gulp.task("js", () => {
 })
 
 gulp.task("images", () => {
-  console.log(`\n༼ง ◉_◉༽ง IMAGES Minify \n`);
+  console.log(`\n༼ง ◉_◉༽ง IMAGES Minify \n`)
   gulp.src("src/images/sunfish.png")
     .pipe(plumber({
       errorHandler: notify.onError(
@@ -67,23 +67,31 @@ gulp.task("images", () => {
     .pipe(gulp.dest("dist/images"))
 })
 
-// ワイルドカードがうまくいかないので一旦パスを直書き
+gulp.task("watch", () => {
+  gulp.watch("src/html/**/*", ["html"])
+  gulp.watch("src/sass/**/*", ["sass"])
+  gulp.watch("src/js/**/*", ["js"])
+  gulp.watch("src/images/**/*", ["images"])
+})
+
 gulp.task("clean", () => {
-  console.log("\nε＝ε＝ε＝(((((ﾉ｀･Д･)ﾉ CLEAN UP\n");
+  console.log("\nε＝ε＝ε＝(((((ﾉ｀･Д･)ﾉ CLEAN UP\n")
+  // ワイルドカードがうまくいかないので一旦パスを直書き
+  // del(["dist/**/*"])
   del(["dist/html/index.min.html", "dist/css/index.min.css", "dist/js/index.min.js", "dist/images/sunfish.min.png"])
 })
 
 gulp.task("build", ["html", "sass", "js", "images"])
 
-// もしタスクが順番通りに行かない場合はこっちを使う ↓
+gulp.task("default", ["clean", "build", "watch"])
+// もしタスクが順番通りに行かない場合はこっちを使う
 // gulp.task("default", () => {
 //   return runSequence(
 //     "clean",
-//     "build"
+//     "build",
+//     "watch"
 //   )
 // })
 
-gulp.task("default", ["clean", "build"])
-
-gulp.task("prod", ["clean", "build"])
-gulp.task("dev", ["clean"])
+gulp.task("prod", ["clean", "build", "watch"])
+gulp.task("dev", ["clean", "watch"])
