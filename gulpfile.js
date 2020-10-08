@@ -40,3 +40,4 @@ gulp.task("images", () => {
 })
 
 gulp.task("default", ["html", "sass", "js", "images"])
+gulp.task("dev")

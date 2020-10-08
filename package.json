@@ -4,6 +4,8 @@
   "description": "gulp練習用リポジトリ",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
+    "start:dev": "gulp dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
