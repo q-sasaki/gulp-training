@@ -10,15 +10,27 @@ app.get("/messages", (req, res) => {
   res.send("hello sasaki!")
 })
 
-app.get("/api/messages", (req, res) => {
-  const messageLists = {
-    1: "aaa",
-    2: "bbb",
-    3: "ccc",
-    4: "ddd"
-  }
+const messageLists = {
+  1: "aaa",
+  2: "bbb",
+  3: "ccc",
+  4: "ddd"
+}
 
+// メッセージだけなら、配列だとよりシンプルかも → 配列の場合は-1する
+// const messageLists = [
+//   "aaa",
+//   "bbb",
+//   "ccc",
+//   "ddd"
+// ]
+
+app.get("/api/messages", (req, res) => {
   res.json(messageLists)
+})
+
+app.get("/api/messages/:messageId", (req, res) => {
+  res.send(messageLists[req.params.messageId])
 })
 
 app.listen(port, () => {
