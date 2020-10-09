@@ -6,6 +6,10 @@ app.get("/", (req, res) => {
   res.send("hello express!")
 })
 
+app.get("/messages", (req, res) => {
+  res.send("hello sasaki!")
+})
+
 app.listen(port, () => {
   console.log(`At http://localhost:${port}`);
 })
