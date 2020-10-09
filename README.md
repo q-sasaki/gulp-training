@@ -1,2 +1,2 @@
-# gulp-training
-gulp練習用リポジトリ
+# infra-training
+infra練習用リポジトリ
