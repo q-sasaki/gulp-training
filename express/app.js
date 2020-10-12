@@ -12,6 +12,14 @@ const messageLists = {
   4: "ddd"
 }
 
+app.all("*", (req, res, next) => {
+  if (!req.get('User-Agent')) {
+    res.status(401).send(`User-Agent is empty`)
+  }
+
+  next()
+})
+
 app.get("/", (req, res) => {
   res.send("hello express!")
 })
@@ -49,5 +57,5 @@ app.post("/api/messages/:messageId", (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`At http://localhost:${port}`);
+  console.log(`At http://localhost:${port}`)
 })
