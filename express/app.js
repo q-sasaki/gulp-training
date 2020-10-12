@@ -28,6 +28,10 @@ app.get("/messages", (req, res) => {
   res.send(messageLists)
 })
 
+app.get("/messages/:messageId", (req, res) => {
+  res.send(messageLists[req.params.messageId])
+})
+
 app.get("/api/messages", (req, res) => {
   res.json(messageLists)
 })
