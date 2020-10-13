@@ -118,7 +118,7 @@ gulp.task("images:copy", () => {
 
 gulp.task("clean", () => {
   console.log("\nε＝ε＝ε＝(((((ﾉ｀･Д･)ﾉ CLEAN UP\n")
-  del(["dist"])
+  return del(["dist"])
 })
 
 
@@ -135,17 +135,17 @@ gulp.task("copy", ["html:copy", "sass:copy", "js:copy", "images:copy"])
 
 
 gulp.task("prod", () => {
-  return runSequence([
+  return runSequence(
     "clean",
     "build"
-  ])
+  )
 })
 
 
 gulp.task("dev", () => {
-  return runSequence([
+  return runSequence(
     "clean",
     "copy",
     "watch"
-  ])
+  )
 })

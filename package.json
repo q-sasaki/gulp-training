@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:prod": "gulp prod",
-    "start:dev": "gulp dev",
+    "start:dev": "nodemon express/app.js & gulp dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
