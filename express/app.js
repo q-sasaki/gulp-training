@@ -20,9 +20,13 @@ app.use(express.static('dist/html'))
 app.get("/messages", (req, res) => {
   const message = messageLists[req.query.key]
   if (message) {
-    res.send(`a new page!! your message is ${message}`)
+    res.send(`Message of your choice is ${message}`)
   } else {
-    res.send("a new page!! Enter the existing key in the query")
+    res.send(`
+      This is messages page!!
+      <br>
+      All messages are ${Object.values(messageLists)}
+    `)
   }
 })
 
