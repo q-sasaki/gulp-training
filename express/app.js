@@ -24,11 +24,12 @@ app.use(express.static('dist'))
 app.use(express.static('dist/html'))
 
 app.get("/messages", (req, res) => {
-  res.send(messageLists)
-})
-
-app.get("/messages/:messageId", (req, res) => {
-  res.send(messageLists[req.params.messageId])
+  const message = messageLists[req.query.key]
+  if (message) {
+    res.send(`a new page!! your message is ${message}`)
+  } else {
+    res.send("a new page!! Enter the existing key in the query")
+  }
 })
 
 app.get("/api/messages", (req, res) => {
