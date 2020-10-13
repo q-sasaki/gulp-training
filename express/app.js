@@ -1,16 +1,10 @@
 const express = require("express")
 const app = express()
 const port = 8080
+const messageLists = require("./example.json")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
-
-const messageLists = {
-  1: "aaa",
-  2: "bbb",
-  3: "ccc",
-  4: "ddd"
-}
 
 app.all("*", (req, res, next) => {
   if (!req.get('User-Agent')) {
