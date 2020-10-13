@@ -20,9 +20,8 @@ app.all("*", (req, res, next) => {
   next()
 })
 
-app.get("/", (req, res) => {
-  res.send("hello express!")
-})
+app.use(express.static('dist'))
+app.use(express.static('dist/html'))
 
 app.get("/messages", (req, res) => {
   res.send(messageLists)
