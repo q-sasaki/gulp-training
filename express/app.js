@@ -6,13 +6,15 @@ const messageLists = require("./example.json")
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-app.all("*", (req, res, next) => {
+const UserAgentChecker = (req, res, next) => {
   if (!req.get('User-Agent')) {
     res.status(401).send(`User-Agent is empty`)
   }
 
   next()
-})
+}
+
+app.use(UserAgentChecker)
 
 app.use(express.static('dist'))
 app.use(express.static('dist/html'))
