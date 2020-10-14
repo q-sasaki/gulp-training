@@ -43,7 +43,7 @@ app.get("/api/messages/:messageId", (req, res) => {
 app.post("/api/messages/:messageId", (req, res) => {
   // リクエストヘッダのauth-keyが正しくなければ、要求を拒否
   if ("sasaking" !== req.get("auth-key")) {
-    res.status(401).send("You are failing to authenticate")
+    res.status(401).send("Authentication Failure")
   }
 
   const id = req.params.messageId
