@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Sample2 from "./sample2.jsx"
+import Sample2Wrap from "./sample2Wrap.jsx"
 
 const MyComponent = () => {
   return (
     <>
       <div>hello!</div>
-      <Sample2 />
+      <Sample2Wrap />
     </>
   )
 }
