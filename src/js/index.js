@@ -1,4 +1,5 @@
 import './click'
+import './sample.jsx'
 
 const target = document.getElementById("root")
 

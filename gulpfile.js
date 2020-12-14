@@ -118,7 +118,7 @@ gulp.task("images:copy", () => {
 
 gulp.task("clean", () => {
   console.log("\nε＝ε＝ε＝(((((ﾉ｀･Д･)ﾉ CLEAN UP\n")
-  return del(["dist"])
+  return del(["express/dist"])
 })
 
 
