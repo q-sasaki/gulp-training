@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/emperorAngelfish/sample.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -241,62 +241,39 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./src/js/click.js":
-/*!*************************!*\
-  !*** ./src/js/click.js ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("var btn = document.getElementById(\"button\");\nbtn.addEventListener('click', function () {\n  alert('hahahahaha!!');\n});\n\n//# sourceURL=webpack:///./src/js/click.js?");
-
-/***/ }),
-
-/***/ "./src/js/index.js":
-/*!*************************!*\
-  !*** ./src/js/index.js ***!
-  \*************************/
+/***/ "./src/js/emperorAngelfish/sample.jsx":
+/*!********************************************!*\
+  !*** ./src/js/emperorAngelfish/sample.jsx ***!
+  \********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _click__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./click */ \"./src/js/click.js\");\n/* harmony import */ var _click__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_click__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sample_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sample.jsx */ \"./src/js/sample.jsx\");\n\n\nvar target = document.getElementById(\"root\");\ntarget.addEventListener(\"mouseenter\", function () {\n  target.style.color = \"green\";\n});\ntarget.addEventListener('mouseleave', function () {\n  target.style.color = \"red\";\n});\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _sample2Wrap_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sample2Wrap.jsx */ \"./src/js/emperorAngelfish/sample2Wrap.jsx\");\n\n\n\n\nvar MyComponent = function MyComponent() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"hello!\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sample2Wrap_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MyComponent, null), document.getElementById('reactApp'));\n\n//# sourceURL=webpack:///./src/js/emperorAngelfish/sample.jsx?");
 
 /***/ }),
 
-/***/ "./src/js/sample.jsx":
-/*!***************************!*\
-  !*** ./src/js/sample.jsx ***!
-  \***************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _sample2Wrap_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sample2Wrap.jsx */ \"./src/js/sample2Wrap.jsx\");\n\n\n\n\nvar MyComponent = function MyComponent() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"hello!\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sample2Wrap_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MyComponent, null), document.getElementById('reactApp'));\n\n//# sourceURL=webpack:///./src/js/sample.jsx?");
-
-/***/ }),
-
-/***/ "./src/js/sample2.jsx":
-/*!****************************!*\
-  !*** ./src/js/sample2.jsx ***!
-  \****************************/
+/***/ "./src/js/emperorAngelfish/sample2.jsx":
+/*!*********************************************!*\
+  !*** ./src/js/emperorAngelfish/sample2.jsx ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar Sample2 = function Sample2() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"hello2!\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Sample2);\n\n//# sourceURL=webpack:///./src/js/sample2.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar Sample2 = function Sample2() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"hello2!\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Sample2);\n\n//# sourceURL=webpack:///./src/js/emperorAngelfish/sample2.jsx?");
 
 /***/ }),
 
-/***/ "./src/js/sample2Wrap.jsx":
-/*!********************************!*\
-  !*** ./src/js/sample2Wrap.jsx ***!
-  \********************************/
+/***/ "./src/js/emperorAngelfish/sample2Wrap.jsx":
+/*!*************************************************!*\
+  !*** ./src/js/emperorAngelfish/sample2Wrap.jsx ***!
+  \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sample2_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sample2.jsx */ \"./src/js/sample2.jsx\");\n\n\n\nvar Sample2Wrap = function Sample2Wrap() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sample2_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Sample2Wrap);\n\n//# sourceURL=webpack:///./src/js/sample2Wrap.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sample2_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sample2.jsx */ \"./src/js/emperorAngelfish/sample2.jsx\");\n\n\n\nvar Sample2Wrap = function Sample2Wrap() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sample2_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Sample2Wrap);\n\n//# sourceURL=webpack:///./src/js/emperorAngelfish/sample2Wrap.jsx?");
 
 /***/ })
 
