@@ -18,11 +18,11 @@ const VoteChecker = (req, res, next) => {
   const result = req.get('X-Presidential-Vote')
 
   if (result === 'Trump') {
-    app.use(express.static('express/dist/trump'))
+    app.use(express.static('dist/html/trump'))
   } else if (result === 'biden') {
-    app.use(express.static('express/dist/biden'))
+    app.use(express.static('dist/html/biden'))
   } else {
-    app.use(express.static('express/dist'))
+    app.use(express.static('dist/html'))
   }
   next()
 }

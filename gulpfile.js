@@ -21,7 +21,7 @@ gulp.task("html:minify", () => {
       )
     }))
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest("express/dist"))
+    .pipe(gulp.dest("dist/html"))
 })
 
 gulp.task("html:copy", () => {
@@ -32,7 +32,7 @@ gulp.task("html:copy", () => {
         "Error: <%= error.message %>"
       )
     }))
-    .pipe(gulp.dest("express/dist"))
+    .pipe(gulp.dest("dist/html"))
 })
 
 
@@ -47,7 +47,7 @@ gulp.task("sass:minify", () => {
     }))
     .pipe(sass({outputStyle: "expanded"}))
     .pipe(cssmin())
-    .pipe(gulp.dest("express/dist/css"))
+    .pipe(gulp.dest("dist/css"))
 })
 
 gulp.task("sass:copy", () => {
@@ -59,7 +59,7 @@ gulp.task("sass:copy", () => {
       )
     }))
     .pipe(sass({outputStyle: "expanded"}))
-    .pipe(gulp.dest("express/dist/css"))
+    .pipe(gulp.dest("dist/css"))
 })
 
 
@@ -76,7 +76,7 @@ gulp.task("js:minify", () => {
       presets: ["@babel/env"]
     }))
     .pipe(uglify())
-    .pipe(gulp.dest("express/dist/js"))
+    .pipe(gulp.dest("dist/js"))
 })
 
 gulp.task("js:copy", () => {
@@ -87,7 +87,7 @@ gulp.task("js:copy", () => {
         "Error: <%= error.message %>"
       )
     }))
-    .pipe(gulp.dest("express/dist/js"))
+    .pipe(gulp.dest("dist/js"))
 })
 
 
@@ -101,7 +101,7 @@ gulp.task("images:minify", () => {
       )
     }))
     .pipe(imagemin())
-    .pipe(gulp.dest("express/dist/images"))
+    .pipe(gulp.dest("dist/images"))
 })
 
 gulp.task("images:copy", () => {
@@ -112,13 +112,13 @@ gulp.task("images:copy", () => {
         "Error: <%= error.message %>"
       )
     }))
-    .pipe(gulp.dest("express/dist/images"))
+    .pipe(gulp.dest("dist/images"))
 })
 
 
 gulp.task("clean", () => {
   console.log("\nε＝ε＝ε＝(((((ﾉ｀･Д･)ﾉ CLEAN UP\n")
-  return del(["express/dist"])
+  return del(["dist"])
 })
 
 

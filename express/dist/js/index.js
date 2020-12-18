@@ -1,1 +1,0 @@
-"use strict";require("./click"),require("./sample.jsx");var target=document.getElementById("root");target.addEventListener("mouseenter",function(){target.style.color="green"}),target.addEventListener("mouseleave",function(){target.style.color="red"});
