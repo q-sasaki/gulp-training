@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Sample2Wrap from "./sample2Wrap.jsx"
 
 const MyComponent = () => {
@@ -11,7 +10,4 @@ const MyComponent = () => {
   )
 }
 
-ReactDOM.render(
-  <MyComponent />,
-  document.getElementById('reactApp')
-)
+export default MyComponent

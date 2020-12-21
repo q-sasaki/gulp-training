@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   entry: {
     sunfish: './src/js/sunfish',
-    emperorAngelfish: "./src/js/emperorAngelfish/sample.jsx"
+    emperorAngelfish: "./src/js/emperorAngelfish/index.jsx"
   }
   ,
   output: {
