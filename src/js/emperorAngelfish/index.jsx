@@ -7,13 +7,9 @@ const Index = () => {
     <>
       <MyComponent />
       <h1>Another Page</h1>
-      <a href="./index.html">Topページへ</a>
       <img src="../images/emperorAngelfish.png" />
     </>
   )
 }
 
-ReactDOM.render(
-  <Index />,
-  document.getElementById('reactApp')
-)
+export default Index
