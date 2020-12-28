@@ -22,13 +22,15 @@ const VoteChecker = (req, res, next) => {
   } else if (result === 'biden') {
     app.use(express.static('dist/html/biden'))
   } else {
-    app.use(express.static('dist/html'))
+    
   }
   next()
 }
 
 app.use(UserAgentChecker)
 app.use(VoteChecker)
+app.use(express.static('dist/html'))
+app.use(express.static('dist/'))
 
 app.get("/messages", (req, res) => {
   const message = messageLists[req.query.key]

@@ -130,7 +130,8 @@ gulp.task("watch", () => {
 })
 
 
-gulp.task("build", ["html:minify", "sass:minify", "js:minify", "images:minify"])
+gulp.task("build", ["html:minify", "sass:minify", "images:minify"])
+// gulp.task("build", ["html:minify", "sass:minify", "js:minify", "images:minify"])
 gulp.task("copy", ["html:copy", "sass:copy", "js:copy", "images:copy"])
 
 
