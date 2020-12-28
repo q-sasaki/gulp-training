@@ -18,17 +18,19 @@ const VoteChecker = (req, res, next) => {
   const result = req.get('X-Presidential-Vote')
 
   if (result === 'Trump') {
-    app.use(express.static('express/dist/trump'))
+    app.use(express.static('dist/html/trump'))
   } else if (result === 'biden') {
-    app.use(express.static('express/dist/biden'))
+    app.use(express.static('dist/html/biden'))
   } else {
-    app.use(express.static('express/dist'))
+    
   }
   next()
 }
 
 app.use(UserAgentChecker)
 app.use(VoteChecker)
+app.use(express.static('dist/html'))
+app.use(express.static('dist/'))
 
 app.get("/messages", (req, res) => {
   const message = messageLists[req.query.key]
