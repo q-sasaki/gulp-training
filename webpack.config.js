@@ -3,12 +3,12 @@ const path = require('path')
 module.exports = {
   mode: 'development',
   entry: {
-    sunfish: './src/js/sunfish',
+    sunfish: './src/js/sunfish/index.jsx',
     emperorAngelfish: "./src/js/emperorAngelfish/index.jsx"
   }
   ,
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name]/[name].bundle.js',
     path: path.resolve(__dirname, 'dist/js'),
   },
   module: {

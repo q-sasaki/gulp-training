@@ -1,5 +1,3 @@
-import './click'
-
 const target = document.getElementById("root")
 
 target.addEventListener("mouseenter", () => {

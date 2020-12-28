@@ -1,5 +1,5 @@
-const btn = document.getElementById("button")
-
-btn.addEventListener('click', () => {
+const btnClick = () => {
   alert('hahahahaha!!')
-})
+}
+
+export default btnClick
