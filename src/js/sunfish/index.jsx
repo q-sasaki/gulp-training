@@ -1,15 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import btnClick from "./click"
 import "./index"
+import { Link, BrowserRouter as Router, Route } from "react-router-dom"
+import emperorAngelfish from "../emperorAngelfish/index.jsx"
+import sunfish from "./sunfish.jsx"
 
 const Top = () => {
   return (
     <>
-      <h1 id="topHeading">Top Page</h1>
-      <a href="./another.html">別ページへ</a>
-      <button id="button" onClick={btnClick}>クリック！！！</button>
-      <img src="../images/sunfish.png" />
+      <Router>
+        <div>
+          <Link to="/index.html">TOPページへ</Link>
+          <Link to="/another.html">別ページへ</Link>
+          <Route exact path="/index.html" component={sunfish} />
+          <Route exact path="/another.html" component={emperorAngelfish} />
+        </div>
+      </Router>
     </>
   )
 }
