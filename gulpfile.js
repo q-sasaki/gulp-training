@@ -69,7 +69,7 @@ gulp.task("sass:copy", () => {
 // js task
 gulp.task("js:minify", () => {
   console.log(`\n(づ￣ ³￣)づ JS minify \n`)
-  gulp.src("src/js/**")
+  gulp.src("dist/js/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -147,7 +147,8 @@ gulp.task("copy", ["html:copy", "sass:copy", "webpack", "images:copy"])
 gulp.task("prod", () => {
   return runSequence(
     "clean",
-    "build"
+    "build",
+    "js:minify"
   )
 })
 

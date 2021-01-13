@@ -1,5 +1,14 @@
-$color: blue;
+$color1: blue;
+$color2: pink;
 
 #root {
-  color: $color;
+  color: $color1;
+}
+
+#reactApp {
+  color: $color2;
+}
+
+h1 {
+  color: gold;
 }
