@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     sunfish: './src/js/sunfish/index.jsx',
     emperorAngelfish: "./src/js/emperorAngelfish/index.jsx"

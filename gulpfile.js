@@ -147,8 +147,7 @@ gulp.task("copy", ["html:copy", "sass:copy", "webpack", "images:copy"])
 gulp.task("prod", () => {
   return runSequence(
     "clean",
-    "build",
-    "js:minify"
+    "build"
   )
 })
 
