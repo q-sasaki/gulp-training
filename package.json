@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "gulp dev & nodemon express/app.js",
-    "start:prod": "sudo nginx -c $PWD/nginx.conf && sudo killall -9 nginx && gulp prod && open http://sasaki.com && node express/app.js",
+    "start:prod": "sudo killall -9 nginx; sudo nginx -c $PWD/nginx.conf && gulp prod && open http://sasaki.com && node express/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
