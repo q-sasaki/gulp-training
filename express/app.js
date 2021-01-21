@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const port = 8081
 const messageLists = require("./example.json")
+const open = require('open');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
@@ -75,4 +76,5 @@ app.post("/api/messages/:messageId", (req, res) => {
 
 app.listen(port, () => {
   console.log(`At http://localhost:${port}`)
+  open('http://sasaki.com');
 })

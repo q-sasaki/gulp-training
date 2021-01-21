@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "gulp dev & nodemon express/app.js",
-    "start:prod": "sudo killall -9 nginx; sudo nginx -c $PWD/nginx.conf && gulp prod && open http://sasaki.com && node express/app.js",
+    "start:prod": "sudo killall -9 nginx; sudo nginx -c $PWD/nginx.conf && gulp prod && node express/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -38,6 +38,7 @@
     "gulp-sass": "4.0.2",
     "gulp-uglify": "^3.0.2",
     "nodemon": "^2.0.4",
+    "open": "^7.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.2.0",
