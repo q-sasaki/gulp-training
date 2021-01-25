@@ -28,10 +28,14 @@ const VoteChecker = (req, res, next) => {
   next()
 }
 
+var options = {
+  maxAge: '5m',
+}
+
 app.use(UserAgentChecker)
 app.use(VoteChecker)
-app.use(express.static('dist/html'))
-app.use(express.static('dist/'))
+app.use(express.static('dist/html', options))
+app.use(express.static('dist/', options))
 
 app.get("/messages", (req, res) => {
   const message = messageLists[req.query.key]
