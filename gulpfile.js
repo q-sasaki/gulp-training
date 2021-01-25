@@ -9,6 +9,9 @@ const del = require("del")
 const runSequence = require("run-sequence")
 const plumber = require("gulp-plumber")
 const notify = require("gulp-notify")
+const webpack = require("webpack")
+const webpackStream = require("webpack-stream")
+const webpackConfig = require("./webpack.config")
 
 
 // htmltask
@@ -66,7 +69,7 @@ gulp.task("sass:copy", () => {
 // js task
 gulp.task("js:minify", () => {
   console.log(`\n(づ￣ ³￣)づ JS minify \n`)
-  gulp.src("src/js/**")
+  gulp.src("dist/js/**")
     .pipe(plumber({
       errorHandler: notify.onError(
         "Error: <%= error.message %>"
@@ -87,6 +90,12 @@ gulp.task("js:copy", () => {
         "Error: <%= error.message %>"
       )
     }))
+    .pipe(gulp.dest("dist/js"))
+})
+
+gulp.task("webpack", () => {
+  console.log(`\n(づ￣ ³￣)づ Webpack \n`)
+  webpackStream(webpackConfig, webpack)
     .pipe(gulp.dest("dist/js"))
 })
 
@@ -125,14 +134,14 @@ gulp.task("clean", () => {
 gulp.task("watch", () => {
   gulp.watch("src/html/**/*", ["html:copy"])
   gulp.watch("src/sass/**/*", ["sass:copy"])
-  gulp.watch("src/js/**/*", ["js:copy"])
+  gulp.watch("src/js/**/*", ["webpack"])
   gulp.watch("src/images/**/*", ["images:copy"])
 })
 
 
-gulp.task("build", ["html:minify", "sass:minify", "images:minify"])
-// gulp.task("build", ["html:minify", "sass:minify", "js:minify", "images:minify"])
-gulp.task("copy", ["html:copy", "sass:copy", "js:copy", "images:copy"])
+// gulp.task("build", ["html:minify", "sass:minify", "images:minify"])
+gulp.task("build", ["html:minify", "sass:minify", "webpack", "images:minify"])
+gulp.task("copy", ["html:copy", "sass:copy", "webpack", "images:copy"])
 
 
 gulp.task("prod", () => {

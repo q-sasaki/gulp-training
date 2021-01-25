@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const port = 8081
 const messageLists = require("./example.json")
+const open = require('open');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
@@ -27,10 +28,14 @@ const VoteChecker = (req, res, next) => {
   next()
 }
 
+var options = {
+  maxAge: '5m',
+}
+
 app.use(UserAgentChecker)
 app.use(VoteChecker)
-app.use(express.static('dist/html'))
-app.use(express.static('dist/'))
+app.use(express.static('dist/html', options))
+app.use(express.static('dist/', options))
 
 app.get("/messages", (req, res) => {
   const message = messageLists[req.query.key]
@@ -75,4 +80,5 @@ app.post("/api/messages/:messageId", (req, res) => {
 
 app.listen(port, () => {
   console.log(`At http://localhost:${port}`)
+  open('http://sasaki.com');
 })
